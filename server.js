@@ -14,6 +14,6 @@ app.use(bodyParser.json())
 app.use(morgan('dev'))
 app.use(api)
 
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true,useUnifiedTopology:true, useCreateIndex:true });
+mongoose.connect(process.env.DB_NAME, {useNewUrlParser: true,useUnifiedTopology:true, useCreateIndex:true });
 
-app.listen(3000);
+app.listen(process.env.PORT);
