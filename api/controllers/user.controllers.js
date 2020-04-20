@@ -8,7 +8,7 @@ exports.signUp = async (req,res,next)=>{
     .then(data=>{
         if(data.length>=1){
             return res.status(409).send("User Already Exist")
-        }else{;
+        }else{
            bcrypt.hash(req.body.password, 10)
            .then(hash=>{
             if(!hash)  {}
